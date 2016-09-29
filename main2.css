@@ -89,6 +89,7 @@ li a:hover {
 .col-sm-12{
   height: 200px;
   color: white;
+  width: 100%;
 }
 
 .col-sm-10{
@@ -140,7 +141,7 @@ footer{
 
 /*Button CSS*/
 .button {
-    background-color: #0db2f0;
+    background-color: #0db2f0; /* Green */
     color: white;
     padding: 16px 32px;
     text-align: center;
@@ -165,7 +166,7 @@ input{
   border: 2px solid black;
 }
 
-#careerform{
+form{
   padding: 20px;
   background-color: #f2f2f2;
   margin: 20px;
@@ -201,146 +202,6 @@ img.displayed {
   display: block;
   background-color: #D3D3D3;
 }
-
-#error_para{
-  color: red;
-  font-size: 20px;
-}
-
-/*Pop up*/
-@import "http://fonts.googleapis.com/css?family=Raleway";
-/*----------------------------------------------
-CSS settings for HTML div Exact Center
-------------------------------------------------*/
-#abc {
-width:100%;
-height:100%;
-opacity:.95;
-top:0;
-left:0;
-display:none;
-position:fixed;
-background-color:#313131;
-overflow:auto
-}
-img#close {
-position:absolute;
-right:-14px;
-top:-14px;
-cursor:pointer
-}
-#popupContact {
-position:absolute;
-left:50%;
-top:17%;
-margin-left:-202px;
-font-family:'Raleway',sans-serif
-}
-#abcform {
-max-width:300px;
-min-width:250px;
-padding:10px 50px;
-border:2px solid gray;
-border-radius:10px;
-font-family:raleway;
-background-color:#fff
-}
-/*Might take out abc*/
-#abc.p {
-margin-top:30px
-}
-#abc.h2 {
-background-color:#FEFFED;
-padding:20px 35px;
-margin:-10px -50px;
-text-align:center;
-border-radius:10px 10px 0 0
-}
-#abc.hr {
-margin:10px -50px;
-border:0;
-border-top:1px solid #ccc
-}
-#abc.input[type=text] {
-width:82%;
-padding:10px;
-margin-top:30px;
-border:1px solid #ccc;
-padding-left:40px;
-font-size:16px;
-font-family:raleway
-}
-#name {
-background-image:url(../images/name.jpg);
-background-repeat:no-repeat;
-background-position:5px 7px
-}
-#email {
-background-image:url(../images/email.png);
-background-repeat:no-repeat;
-background-position:5px 7px
-}
-textarea {
-background-image:url(../images/msg.png);
-background-repeat:no-repeat;
-background-position:5px 7px;
-width:82%;
-height:95px;
-padding:10px;
-resize:none;
-margin-top:30px;
-border:1px solid #ccc;
-padding-left:40px;
-font-size:16px;
-font-family:raleway;
-margin-bottom:30px
-}
-#submit {
-text-decoration:none;
-width:100%;
-text-align:center;
-display:block;
-background-color:#0db2f0;
-color:#fff;
-border:1px solid black;
-padding:10px 0;
-font-size:20px;
-cursor:pointer;
-border-radius:5px
-}
-span {
-color:red;
-font-weight:700
-}
-/*Fade*/
-@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
-
-/* make keyframes that tell the start state and the end state of our object */
-@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-
-.fade-in {
-  opacity:0;  /* make things invisible upon start */
-  -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
-  -moz-animation:fadeIn ease-in 1;
-  animation:fadeIn ease-in 1;
-
-  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
-  -moz-animation-fill-mode:forwards;
-  animation-fill-mode:forwards;
-
-  -webkit-animation-duration:1s;
-  -moz-animation-duration:1s;
-  animation-duration:1s;
-}
-
-.fade-in.one {
-  -webkit-animation-delay: 0.7s;
-  -moz-animation-delay: 0.7s;
-  animation-delay: 0.7s;
-}
-]
 
 
 
