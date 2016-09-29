@@ -1,0 +1,325 @@
+<?php
+    if(isset($_POST['submit']))
+    {
+        //Things that go in the email
+        $myemail = "universalcaresupport@aol.com"; 
+        $firstname = $_POST['userfirstname'];
+        $lastname = $_POST['userlastname'];
+        $phone = $_POST['userphone'];
+        $address = $_POST['useraddress'];
+        $country = $_POST['usercountry'];
+        $city = $_POST['usercity'];
+        $state = $_POST['userstate'];
+        $zip = $_POST['userzip'];
+        $email = $_POST['useremail'];
+
+        //The form has been submitted, prep a nice thank you message
+        $output = '<h1>Thanks for your file and message!</h1>';
+        //Set the form flag to no display (cheap way!)
+       // $flags = 'style="display:none;"';
+
+        //Deal with the email
+        $to = 'universalcaresupport@aol.com';
+        $subject = "UCSS CAREER INTEREST";
+
+        $message = "Hello,\n\nYou have recieved a career interest from $firstname $lastname. \n\n\nTheir information:\n\nEmail: $email.\nPhone Number: $phone\nAddress: $address\nCity: $city\nState: $state\nZip: $zip\nCountry: $country";
+        $attachment = chunk_split(base64_encode(file_get_contents($_FILES['file']['tmp_name'])));
+        $filename = $_FILES['file']['name'];
+
+        $boundary =md5(date('r', time())); 
+
+        $headers = "From: webmaster@example.com\r\nReply-To: webmaster@example.com";
+        $headers .= "\r\nMIME-Version: 1.0\r\nContent-Type: multipart/mixed; boundary=\"_1_$boundary\"";
+
+        $message="This is a multi-part message in MIME format.
+
+--_1_$boundary
+Content-Type: multipart/alternative; boundary=\"_2_$boundary\"
+
+--_2_$boundary
+Content-Type: text/plain; charset=\"iso-8859-1\"
+Content-Transfer-Encoding: 7bit
+
+$message
+
+--_2_$boundary--
+--_1_$boundary
+Content-Type: application/octet-stream; name=\"$filename\" 
+Content-Transfer-Encoding: base64 
+Content-Disposition: attachment 
+
+$attachment
+--_1_$boundary--";
+        
+        echo "Your form has been submitted!";
+        mail($to, $subject, $message, $headers);
+    } 
+?>
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link rel="shortcut icon" href="UniversalCareSupportLogo1.png">
+		<title>Careers - UCSS</title>
+		<link rel="stylesheet" href="main2.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+		<!--For Nav Bar-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
+		<!--Fonts-->
+		<link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
+    <meta name="keywords" content="Careers, Universal care support services carrers, work with universal care support services, universal care support services jobs">
+
+	</head>
+
+	<body>
+		<!--Translate Page-->
+		<div id="google_translate_element"></div>
+		<script type="text/javascript">
+		function googleTranslateElementInit() {
+  		new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,es,ht', layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT}, 'google_translate_element');
+			}
+		</script>
+		<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+		<!--END translate page-->
+		<header class="look">
+			<div class="row">
+				<h1 id ="verticalLine" class="col-sm-7">Universal Care Support Services LLC</h1> 
+				
+				<nav class="col-sm-5">
+					<p>Call Us at 407-257-6430</p>
+				</nav>
+			</div>
+		</header> 
+
+		<!--Makes a drop down nav bar when used on mobile devices-->
+		<div id="demo" class="w3-hide w3-hide-large w3-hide-medium">
+			<ul class="w3-navbar w3-card-8 w3-round w3-black">
+ 			 	<li><a href="index.html">Home</a></li>
+  			 	<li><a href="services.html">Services</a></li>
+  			 	<li><a href="caregivers.html">Caregivers</a></li>
+  			 	<li><a href="about.html">About Us</a></li>
+  			 	<li><a class="active" href="careers.html">Careers</a></li>
+			</ul>
+		</div>
+
+		<!--Drop down nav Bar-->
+		<ul class="w3-navbar w3-large w3-black w3-left-align">
+  			<li class="w3-hide-medium w3-hide-large w3-black w3-opennav w3-right">
+    			<a href="javascript:void(0);" onclick="myFunction()"> &#9776; </a>
+  			</li>
+  			<li class="w3-hide-small"><a href="index.html">Home</a></li>
+  			<li class="w3-hide-small"><a href="services.html">Services</a></li>
+  			<li class="w3-hide-small"><a href="caregivers.html">Caregivers</a></li>
+  			<li class="w3-hide-small"><a href="about.html">About Us</a></li>
+  			<li><a class="active" href="careers.html">Careers</a></li>
+		</ul>
+
+		<!--Nav Bar for Mobile-->
+		<script type="text/javascript">
+		function myFunction() {
+    		var x = document.getElementById("demo");
+    		if (x.className.indexOf("w3-show") == -1) {
+        		x.className += " w3-show";
+    		} else { 
+        		x.className = x.className.replace(" w3-show", "");
+    		}
+			}
+		</script>
+
+		<script type="text/javascript">
+			function validate(){
+      			var error="";
+      			var first_name = document.getElementById( "first_name" );
+      
+      			if( first_name.value == "" ){
+        			error = " *Please enter your first name. ";
+        			document.getElementById( "error_para" ).innerHTML = error;
+        			first_name.style.background = '#feeeee';
+        			return false;
+      			}
+
+      			else if(first_name.value != ""){
+      				first_name.style.background = 'white';
+      			}
+
+      			var last_name = document.getElementById( "last_name");
+      			
+      			if( last_name.value == "" ){
+        			error = " *Please enter your last name. ";
+        			document.getElementById( "error_para" ).innerHTML = error;
+        			last_name.style.background = '#feeeee';
+        			return false;
+      			}
+
+      			else if(last_name.value != ""){
+      				last_name.style.background = 'white';
+      			}
+
+   
+      			var email = document.getElementById( "email" );
+  
+      			if( email.value == "" || email.value.indexOf( "@" ) == -1 ){
+        			error = " *Please enter a valid email address ";
+        			document.getElementById( "error_para" ).innerHTML = error;
+        			email.style.background = '#feeeee';
+        			return false;
+      			} 
+
+      			else if(email.value != ""){
+      				email.style.background = 'white';
+      			}
+
+      			var phone = document.getElementById( "phone");
+
+      			if( phone.value ==""){
+      				error = " *Please enter your phone number. ";
+      				document.getElementById( "error_para" ).innerHTML = error;
+      				phone.style.background = '#feeeee';
+      				return false;
+      			} 
+
+      			else if(phone.value != ""){
+      				phone.style.background = 'white';
+      			}
+
+      			var address = document.getElementById( "address");
+
+      			if( address.value ==""){
+      				error = " *Please enter your address. ";
+      				document.getElementById( "error_para" ).innerHTML = error;
+      				address.style.background = '#feeeee';
+      				return false;
+      			}  
+
+      			else if(address.value != ""){
+      				address.style.background = 'white';
+      			}
+
+      			var state = document.getElementById( "state");
+
+      			if( state.value ==""){
+      				error = " *Please enter your state. ";
+      				document.getElementById( "error_para" ).innerHTML = error;
+      				state.style.background = '#feeeee';
+      				return false;
+      			} 
+
+      			else if(state.value != ""){
+      				state.style.background = 'white';
+      			}
+
+      			var city = document.getElementById( "city");
+
+      			if( city.value ==""){
+      				error = " *Please enter your city. ";
+      				document.getElementById( "error_para" ).innerHTML = error;
+      				city.style.background = '#feeeee';
+      				return false;
+      			}
+
+      			else if(city.value != ""){
+      				city.style.background = 'white';
+      			}
+
+      			var zip = document.getElementById( "zip");
+
+      			if( zip.value ==""){
+      				error = " *Please enter your zip code. ";
+      				document.getElementById( "error_para" ).innerHTML = error;
+      				zip.style.background = '#feeeee';
+      				return false;
+      			} 
+
+      			else if(zip.value != ""){
+      				zip.style.background = 'white';
+      			}
+
+      			var country = document.getElementById( "country");
+
+      			if( country.value ==""){
+      				error = " *Please enter your country. ";
+      				document.getElementById( "error_para" ).innerHTML = error;
+      				country.style.background = '#feeeee';
+      				return false;
+      			}
+
+      			else if(country.value != ""){
+      				country.style.background = 'white';
+      			}
+
+      			var attached_resume = document.getElementById( "attached_resume");
+
+      			if( attached_resume.value ==""){
+      				error = " *Please attach your resume. ";
+      				document.getElementById( "error_para" ).innerHTML = error;
+      				return false;
+      			}
+      			       
+      			else{
+        			return true;
+      			}
+      		}
+
+		</script>
+
+		<br>
+		<h1 align="center" style="font-family:“Century Gothic”, CenturyGothic, AppleGothic, sans-serif;">Join our team at Universal Care Support Services!</h2>
+			<br>
+			<p style="font-size: 20px; font-family:“Century Gothic”, CenturyGothic, AppleGothic, sans-serif; padding:20px" align="center">Are you interested in working as a caregiver or with the growing company of Universal Care Support Services? We provide equal opportunities for all applicants and jobs are currently available. If you are willing to grow within this company, submit the form below and attach your resume and we will get back to you as soon as possible.</p>
+
+
+		<p id="error_para" align="center"></p>
+		<form enctype="multipart/form-data" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" onsubmit="return validate();" id="careerform">
+    <p style="font-size: 20px; font-family:“Century Gothic”, CenturyGothic, AppleGothic, sans-serif;">First Name:</p>
+    <input type="text" name="userfirstname" id="first_name">
+
+    <p style="font-size: 20px; font-family:“Century Gothic”, CenturyGothic, AppleGothic, sans-serif;">Last Name:</p>
+    <input type="text" name="userlastname" id="last_name">
+                    
+    <p style="font-size: 20px; font-family:“Century Gothic”, CenturyGothic, AppleGothic, sans-serif;">Email:</p>
+    <input type="text" name="useremail" id="email">
+                        
+    <p style="font-size: 20px; font-family:“Century Gothic”, CenturyGothic, AppleGothic, sans-serif;">Phone Number:</p>
+    <input type="text" pattern="[0-9]*" name="userphone" id="phone">
+
+    <p style="font-size: 20px; font-family:“Century Gothic”, CenturyGothic, AppleGothic, sans-serif;">Address:</p>
+    <input type="text" name="useraddress" id="address">
+
+    <p style="font-size: 20px; font-family:“Century Gothic”, CenturyGothic, AppleGothic, sans-serif;">State:</p>
+    <input type="text" name="userstate" id="state">
+
+    <p style="font-size: 20px; font-family:“Century Gothic”, CenturyGothic, AppleGothic, sans-serif;">City:</p>
+    <input type="text" name="usercity" id="city">
+
+    <p style="font-size: 20px; font-family:“Century Gothic”, CenturyGothic, AppleGothic, sans-serif;">Zip Code:</p>
+    <input type="text" pattern="[0-9]*" name="userzip" id="zip">
+
+    <p style="font-size: 20px; font-family:“Century Gothic”, CenturyGothic, AppleGothic, sans-serif;">Country:</p>
+    <input type="text" name="usercountry" id="country">
+
+    <p style="font-size: 20px; font-family:“Century Gothic”, CenturyGothic, AppleGothic, sans-serif;">Attatch Resume:</p>
+    <input type="file" name="file" id="file" MAXLENGTH=50 ALLOW="text/*" style="border: none"> 
+
+    <br>
+                    
+    <br>
+    <input type="submit" name="submit" value="Submit" class="button" onclick="location.href='#top'">
+    </form>
+
+		<hr>
+		<footer>
+			<p align="center"> &#169; 2016 Universal Care Support Services LLC - A Limited Liability Company | Website by <a href="http://leronjulian.github.io" target="_blank">Leron Julian</a></p>
+			<p align="center">Phone: (407) 257-6430 Fax: (321) 247-5575 Email: universalcaresupport@aol.com</p>
+      <p align="center"><a href="sitemap.html">Sitemap</a></p>
+			<p align="center"><a href="#top"><u>Back to Top</u></a></p>
+				
+				<hr>
+
+		</footer>
+	</body>
+</html>
+
+
+		

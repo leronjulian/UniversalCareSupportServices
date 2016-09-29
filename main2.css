@@ -1,0 +1,349 @@
+header {
+  padding: 20px 0;
+  background-color: #D3D3D3;
+
+
+}
+
+header .row,
+footer .row {
+  display: flex;
+  align-items: center;
+ 
+}
+
+header h1 {
+  font-weight: 400;
+  margin-left: 30px;
+  font: 400 50px/1.3 'Lobster Two', Helvetica, sans-serif;
+  color: #2b2b2b;
+  text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0,0,0,0.15);
+}
+
+
+header nav {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 30px;
+  font: 400 20px/1.3 'Lobster Two', Helvetica, sans-serif;
+  color: #2b2b2b;
+  text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0,0,0,0.15);
+}
+
+header p {
+  padding: 0 20px;
+  margin: 0;
+
+}
+
+/* nav bar*/
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: red;
+    box-shadow: 10px 10px 5px gray;
+}
+
+li {
+    float: left;
+    display: inline;
+    margin-left: 30px;
+
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: #0db2f0;
+}
+
+/* Change the color when hovering over nav bar */
+li a:hover {
+    color: white;
+}
+.active {
+    color: white;
+}
+
+#verticalLine {
+    border-left: thick solid #0db2f0;
+}
+
+
+.col-sm-3{
+  background-color: 
+  margin-top: 40px;
+  height: 700px;
+}
+
+
+.col-sm-12{
+  height: 200px;
+  color: white;
+}
+
+.col-sm-10{
+  color: black;
+  font-family: “Century Gothic”, CenturyGothic, AppleGothic, sans-serif;
+} 
+
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oswald Regular'), local('Oswald-Regular'), url(https://fonts.gstatic.com/s/oswald/v11/Qw6_9HvXRQGg5mMbFR3Phn-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oswald Regular'), local('Oswald-Regular'), url(https://fonts.gstatic.com/s/oswald/v11/_P8jt3Y65hJ9c4AzRE0V1OvvDin1pK8aKteLpeZ5c0A.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+body hr{
+  height: 10px;
+  background-color: #0db2f0;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+footer{
+  background-color: black;
+  color: gray;
+  height: 100%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+#timedMsgDiv{
+  text-align: center;
+  font-size: 30px;
+  font-family: Zapf Chancery, cursive;
+  font-style: font-style: italic;
+}
+
+.col-sm-11{
+  font-family: “Century Gothic”, CenturyGothic, AppleGothic, sans-serif;
+}
+
+/*Button CSS*/
+.button {
+    background-color: #0db2f0;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.button:hover {
+    background-color: white;
+    color: black;
+  }
+.button:onclick
+
+input{
+  width: 100%;
+  border: 2px solid black;
+}
+
+#careerform{
+  padding: 20px;
+  background-color: #f2f2f2;
+  margin: 20px;
+}
+input[type=submit]:hover {
+    background-color: white;
+    color: black;
+}
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+html, body{
+  max-width: 100%;
+  overflow-x: hidden; 
+}
+
+img.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+
+}
+
+#google_translate_element{
+  display: block;
+  background-color: #D3D3D3;
+}
+
+#error_para{
+  color: red;
+  font-size: 20px;
+}
+
+/*Pop up*/
+@import "http://fonts.googleapis.com/css?family=Raleway";
+/*----------------------------------------------
+CSS settings for HTML div Exact Center
+------------------------------------------------*/
+#abc {
+width:100%;
+height:100%;
+opacity:.95;
+top:0;
+left:0;
+display:none;
+position:fixed;
+background-color:#313131;
+overflow:auto
+}
+img#close {
+position:absolute;
+right:-14px;
+top:-14px;
+cursor:pointer
+}
+#popupContact {
+position:absolute;
+left:50%;
+top:17%;
+margin-left:-202px;
+font-family:'Raleway',sans-serif
+}
+#abcform {
+max-width:300px;
+min-width:250px;
+padding:10px 50px;
+border:2px solid gray;
+border-radius:10px;
+font-family:raleway;
+background-color:#fff
+}
+/*Might take out abc*/
+#abc.p {
+margin-top:30px
+}
+#abc.h2 {
+background-color:#FEFFED;
+padding:20px 35px;
+margin:-10px -50px;
+text-align:center;
+border-radius:10px 10px 0 0
+}
+#abc.hr {
+margin:10px -50px;
+border:0;
+border-top:1px solid #ccc
+}
+#abc.input[type=text] {
+width:82%;
+padding:10px;
+margin-top:30px;
+border:1px solid #ccc;
+padding-left:40px;
+font-size:16px;
+font-family:raleway
+}
+#name {
+background-image:url(../images/name.jpg);
+background-repeat:no-repeat;
+background-position:5px 7px
+}
+#email {
+background-image:url(../images/email.png);
+background-repeat:no-repeat;
+background-position:5px 7px
+}
+textarea {
+background-image:url(../images/msg.png);
+background-repeat:no-repeat;
+background-position:5px 7px;
+width:82%;
+height:95px;
+padding:10px;
+resize:none;
+margin-top:30px;
+border:1px solid #ccc;
+padding-left:40px;
+font-size:16px;
+font-family:raleway;
+margin-bottom:30px
+}
+#submit {
+text-decoration:none;
+width:100%;
+text-align:center;
+display:block;
+background-color:#0db2f0;
+color:#fff;
+border:1px solid black;
+padding:10px 0;
+font-size:20px;
+cursor:pointer;
+border-radius:5px
+}
+span {
+color:red;
+font-weight:700
+}
+/*Fade*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+
+/* make keyframes that tell the start state and the end state of our object */
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.fade-in {
+  opacity:0;  /* make things invisible upon start */
+  -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}
+
+.fade-in.one {
+  -webkit-animation-delay: 0.7s;
+  -moz-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+}
+]
+
+
+
+
+
+
